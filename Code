@@ -1,0 +1,662 @@
+library(spmoran)
+require(spdep)
+
+#Model 1
+y <- Data[,"Drive" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard", "Informal","Cul_de_Sac", "Large_Block", "Intense", "Irregular", "Sex","Age", "logGDP", "PM2.5", "Light", "HDI", "logPop", "Stringency", "COVID")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+res
+
+
+
+#Model 2
+y <- Data[,"Walk" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard", "Informal","Cul_de_Sac", "Large_Block", "Intense", "Irregular","Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXCOVID","NDVIXCOVID")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+res
+
+
+
+
+#Model 3
+y <- Data[,"Transit" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard",  "Large_Block", "Intense", "Sex","Age", "logGDP", "PM2.5", "Light", "HDI",  "logPop", "Stringency", "COVID","GIXCOVID","NDVIXCOVID")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+res
+
+
+
+
+
+
+#Model 4a
+y <- Data[,"Drive" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard", "Informal","Cul_de_Sac", "Large_Block", "Intense", "Irregular","Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXNDVI")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+res
+
+
+
+#Model 4b
+y <- Data[,"Walk" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard", "Informal","Cul_de_Sac", "Large_Block", "Intense", "Irregular","Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXNDVI")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+res
+
+
+
+#Model 4c
+y <- Data[,"Transit" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard",  "Large_Block", "Intense", "Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXNDVI")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+res
+
+
+
+
+
+
+
+#Model 5a
+y <- Data[,"Drive" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard", "Informal","Cul_de_Sac", "Large_Block", "Intense", "Irregular","Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXHDI", "NDVIXHDI")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+res
+
+
+
+#Model 5b
+y <- Data[,"Walk" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard", "Informal","Cul_de_Sac", "Large_Block", "Intense", "Irregular","Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXHDI", "NDVIXHDI")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+res
+
+
+
+#Model 5c
+y <- Data[,"Transit" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard",  "Large_Block", "Intense", "Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXHDI", "NDVIXHDI")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+res
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Model 6a
+y <- Data[,"Drive" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard", "Informal","Cul_de_Sac", "Large_Block", "Intense", "Irregular","Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXGDP", "NDVIXGDP")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+res
+
+
+
+#Model 6b
+y <- Data[,"Walk" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard", "Informal","Cul_de_Sac", "Large_Block", "Intense", "Irregular","Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXGDP", "NDVIXGDP")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+res
+
+
+
+#Model 6c
+y <- Data[,"Transit" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard",  "Large_Block", "Intense", "Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXGDP", "NDVIXGDP")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+res
+
+
+
+
+#Model 7a
+y <- Data[,"Drive" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard", "Informal","Cul_de_Sac", "Large_Block", "Intense", "Irregular","Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXPop", "NDVIXPop")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+res
+
+
+#Model 7b
+y <- Data[,"Walk" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard", "Informal","Cul_de_Sac", "Large_Block", "Intense", "Irregular","Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXPop", "NDVIXPop")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+res
+
+
+
+#Model 7c
+y <- Data[,"Transit" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard",  "Large_Block", "Intense", "Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXPop", "NDVIXPop")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+res
+
+
+
+#Model 8a
+y <- Data[,"Drive" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard", "Informal","Cul_de_Sac", "Large_Block", "Intense", "Irregular","Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXStringency", "NDVIXStringency")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+Res
+
+#Model 8b
+y <- Data[,"Walk" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard", "Informal","Cul_de_Sac", "Large_Block", "Intense", "Irregular","Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXStringency", "NDVIXStringency")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+Res
+
+
+#Model 8c
+y <- Data[,"Transit" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard",  "Large_Block", "Intense", "Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXStringency", "NDVIXStringency")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+Res
+
+
+#Model 9a
+y <- Data[,"Drive" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard", "Informal","Cul_de_Sac", "Large_Block", "Intense", "Irregular","Sex","Age", "logGDP", "PM2.5", "Light", "HDI",  "logPop", "Stringency", "COVID","GIXCOVID", "NDVIXCOVID")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+Res
+
+
+
+#Model 9b
+y <- Data[,"Walk" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard", "Informal","Cul_de_Sac", "Large_Block", "Intense", "Irregular","Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXCOVID", "NDVIXCOVID")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+Res
+
+
+#Model 9c
+y <- Data[,"Transit" ]
+y <- data.frame (y)
+z <-y[, 1]
+
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard",  "Large_Block", "Intense", "Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXCOVID", "NDVIXCOVID")]
+x <- data.frame (x)
+ID<- Data[,"ID"]
+ID <- data.frame (ID)
+ID <-ID[, 1]
+ID <- as.integer(ID)
+
+CID<- Data[,"CID"]
+CID <- data.frame (CID)
+CID <-CID[, 1]
+CID <- as.integer(CID)
+
+coords<- Data[,c("X","Y")]
+meig_g<- meigen(coords=coords)
+
+res <- resf(y = z, x = x, meig = meig_g, xgroup = ID, CID)
+Res
+
+
+
+
+
+
+#Figure S4a
+x <- -2.9:0.8
+y1 <- 0*x+33.80
+y2 <- 0*x+44.76
+y3 <- 0*x+45.48
+y4 <- 0*x+0
+y5 <- 365.35*x+0
+y6 <- 0*x+192.94
+
+# Create an empty plot
+plot(x, y1, type = "n", xlim = c(-2.9, 0.8),  ylim = c(-1000, 800),
+     xlab = "GDP in log form (centered; range from -2.90 to 0.76)", ylab = "Effect size of green space", main = "Visualization of interaction effect")
+# Plot each line one by one
+lines(x, y1, type = "l", col = "red")
+lines(x, y2, type = "l", col = "yellow")
+lines(x, y3, type = "l", col = "blue")
+lines(x, y4, type = "l", col = "green")
+lines(x, y5, type = "l", col = "black")
+lines(x, y6, type = "l", col = "grey")
+# Add a legend
+legend("topright", legend = c("Green space exposure-Driving", "Green space Gini index-Driving", "Green space exposure-Walking","Green space Gini index-Walking", "Green space exposure-Transit", "Green space Gini index-Transit"), 
+       col = c("red", "yellow","blue", "green","black","grey"), lty = 1)
+
+
+
+#Figure S4b
+
+x <- -0.5:0.5
+y1 <- -525.64*x+41.53
+y2 <- 0*x+49.78
+y3 <- -800.53*x+52.24
+y4 <- 0*x+0
+y5 <- 0*x+0
+y6 <- 0*x+174.31
+# Create an empty plot
+plot(x, y1, type = "n", xlim = c(-0.5, 0.5), ylim = c(-100, 500), 
+     xlab = "HDI (centered; range from -0.25 to 0.06)", ylab = "Effect size of green space", main = "Visualization of interaction effect")
+# Plot each line one by one
+lines(x, y1, type = "l", col = "red")
+lines(x, y2, type = "l", col = "yellow")
+lines(x, y3, type = "l", col = "blue")
+lines(x, y4, type = "l", col = "green")
+lines(x, y5, type = "l", col = "black")
+lines(x, y6, type = "l", col = "grey")
+# Add a legend
+legend("topright", legend = c("Green space exposure-Driving", "Green space Gini index-Driving", "Green space exposure-Walking","Green space Gini index-Walking", "Green space exposure-Transit", "Green space Gini index-Transit"), 
+       col = c("red", "yellow","blue", "green","black","grey"), lty = 1)
+
+#Figure S4c
+x <- -3.5:3.5
+y1 <- 0*x+41.34
+y2 <- 0*x+50.12
+y3 <- 0*x+51.4
+y4 <- 0*x+53.31
+y5 <- 142.64*x+90.09
+y6 <- 141.84*x+90.09
+# Create an empty plot
+plot(x, y1, type = "n", xlim = c(-3.5, 3.5), ylim = c(-500, 1000), 
+     xlab = "Population density in log form (centered; range from -2.61 to 3.44)", ylab = "Effect size of green space", main = "Visualization of interaction effect")
+# Plot each line one by one
+lines(x, y1, type = "l", col = "red")
+lines(x, y2, type = "l", col = "yellow")
+lines(x, y3, type = "l", col = "blue")
+lines(x, y4, type = "l", col = "green")
+lines(x, y5, type = "l", col = "black")
+lines(x, y6, type = "l", col = "grey")
+# Add a legend
+legend("topright", legend = c("Green space exposure-Driving", "Green space Gini index-Driving", "Green space exposure-Walking","Green space Gini index-Walking", "Green space exposure-Transit", "Green space Gini index-Transit"), 
+       col = c("red", "yellow","blue", "green","black","grey"), lty = 1)
+
+
+#Figure S4d
+x <- -55:55
+y1 <- 0*x+32.95
+y2 <- 0.62*x+48.51
+y3 <- 0*x+41.19
+y4 <- 0*x+0
+y5 <- -2.69*x+0
+y6 <- -5.90*x+180.97
+# Create an empty plot
+plot(x, y1, type = "n", xlim = c(-55, 55), ylim = c(-200, 500), 
+     xlab = "Stringency index (centered; range from -53.06 to 46.94)", ylab = "Effect size of green space", main = "Visualization of interaction effect")
+# Plot each line one by one
+lines(x, y1, type = "l", col = "red")
+lines(x, y2, type = "l", col = "yellow")
+lines(x, y3, type = "l", col = "blue")
+lines(x, y4, type = "l", col = "green")
+lines(x, y5, type = "l", col = "black")
+lines(x, y6, type = "l", col = "grey")
+# Add a legend
+legend("topright", legend = c("Green space exposure-Driving", "Green space Gini index-Driving", "Green space exposure-Walking","Green space Gini index-Walking", "Green space exposure-Transit", "Green space Gini index-Transit"), 
+       col = c("red", "yellow","blue", "green","black","grey"), lty = 1)
+
+
+
+#Figure S4e
+x <- -1:20
+y1 <- 39.97*x+36.71
+y2 <- 0*x+47.51
+y3 <- 140.39*x+52.80
+y4 <- 0*x+0
+y5 <- 209.34*x+0
+y6 <- 1204.61*x+212.35
+# Create an empty plot
+plot(x, y1, type = "n", xlim = c(-1, 20), ylim = c(-100, 40000), 
+     xlab = "COVID-19 severity (centered; range from -0.32 to 20.91)", ylab = "Effect size of green space", main = "Visualization of interaction effect")
+# Plot each line one by one
+lines(x, y1, type = "l", col = "red")
+lines(x, y2, type = "l", col = "yellow")
+lines(x, y3, type = "l", col = "blue")
+lines(x, y4, type = "l", col = "green")
+lines(x, y5, type = "l", col = "black")
+lines(x, y6, type = "l", col = "grey")
+# Add a legend
+legend("topright", legend = c("Green space exposure-Driving", "Green space Gini index-Driving", "Green space exposure-Walking","Green space Gini index-Walking", "Green space exposure-Transit", "Green space Gini index-Transit"), 
+       col = c("red", "yellow","blue", "green","black","grey"), lty = 1)
+
+
