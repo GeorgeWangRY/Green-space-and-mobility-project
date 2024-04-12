@@ -31,7 +31,7 @@ y <- Data[,"Walk" ]
 y <- data.frame (y)
 z <-y[, 1]
 
-x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard", "Informal","Cul_de_Sac", "Large_Block", "Intense", "Irregular","Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID","GIXCOVID","NDVIXCOVID")]
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard", "Informal","Cul_de_Sac", "Large_Block", "Intense", "Irregular","Sex","Age", "logGDP", "PM2.5", "Light",  "HDI", "logPop", "Stringency", "COVID")]
 x <- data.frame (x)
 ID<- Data[,"ID"]
 ID <- data.frame (ID)
@@ -57,7 +57,7 @@ y <- Data[,"Transit" ]
 y <- data.frame (y)
 z <-y[, 1]
 
-x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard",  "Large_Block", "Intense", "Sex","Age", "logGDP", "PM2.5", "Light", "HDI",  "logPop", "Stringency", "COVID","GIXCOVID","NDVIXCOVID")]
+x <- Data[,c( "GExpo500m", "GExpo500mG","High_Transit","Chequerboard",  "Large_Block", "Intense", "Sex","Age", "logGDP", "PM2.5", "Light", "HDI",  "logPop", "Stringency", "COVID")]
 x <- data.frame (x)
 ID<- Data[,"ID"]
 ID <- data.frame (ID)
