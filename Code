@@ -1,4 +1,6 @@
-library(spmoran)
+install.packages('spmoran')
+install.packages('spdep')
+library(spdep)
 require(spdep)
 
 #Model 1
